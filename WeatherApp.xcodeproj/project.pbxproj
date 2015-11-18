@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		67C176E200C5988E2A4D56C7 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E6E5BC8F2C48D78D495E7A /* Pods_WeatherApp.framework */; };
 		9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221C1BFCCEF100CAF09A /* AppDelegate.swift */; };
-		9116221F1BFCCEF100CAF09A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* MasterViewController.swift */; };
-		911622211BFCCEF100CAF09A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911622201BFCCEF100CAF09A /* DetailViewController.swift */; };
+		9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */; };
+		911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */; };
 		911622241BFCCEF100CAF09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911622221BFCCEF100CAF09A /* Main.storyboard */; };
 		911622261BFCCEF100CAF09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911622251BFCCEF100CAF09A /* Assets.xcassets */; };
 		911622291BFCCEF100CAF09A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911622271BFCCEF100CAF09A /* LaunchScreen.storyboard */; };
@@ -22,8 +22,8 @@
 		81025140A9A33D554D27E574 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		911622191BFCCEF100CAF09A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9116221C1BFCCEF100CAF09A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9116221E1BFCCEF100CAF09A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		911622201BFCCEF100CAF09A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictListViewController.swift; sourceTree = "<group>"; };
+		911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		911622231BFCCEF100CAF09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		911622251BFCCEF100CAF09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		911622281BFCCEF100CAF09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				9116221C1BFCCEF100CAF09A /* AppDelegate.swift */,
-				9116221E1BFCCEF100CAF09A /* MasterViewController.swift */,
-				911622201BFCCEF100CAF09A /* DetailViewController.swift */,
+				9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */,
+				911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */,
 				911622221BFCCEF100CAF09A /* Main.storyboard */,
 				911622251BFCCEF100CAF09A /* Assets.xcassets */,
 				911622271BFCCEF100CAF09A /* LaunchScreen.storyboard */,
@@ -222,8 +222,8 @@
 			files = (
 				91AC3CAE1BFCE9EF00DFB0C3 /* WeatherService.swift in Sources */,
 				911622311BFCCF8200CAF09A /* Weather.swift in Sources */,
-				911622211BFCCEF100CAF09A /* DetailViewController.swift in Sources */,
-				9116221F1BFCCEF100CAF09A /* MasterViewController.swift in Sources */,
+				911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */,
+				9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */,
 				9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

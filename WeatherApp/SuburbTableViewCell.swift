@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DistrictTableViewCell: UITableViewCell {
+class SuburbTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!

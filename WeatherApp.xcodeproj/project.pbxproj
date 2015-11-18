@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		67C176E200C5988E2A4D56C7 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E6E5BC8F2C48D78D495E7A /* Pods_WeatherApp.framework */; };
-		9101E9CF1BFD154A001640F2 /* DistrictTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */; };
+		9101E9CF1BFD154A001640F2 /* SuburbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */; };
 		9101E9D11BFD228C001640F2 /* WeatherSortingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */; };
 		9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221C1BFCCEF100CAF09A /* AppDelegate.swift */; };
-		9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */; };
+		9116221F1BFCCEF100CAF09A /* SuburbListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */; };
 		911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */; };
 		911622241BFCCEF100CAF09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911622221BFCCEF100CAF09A /* Main.storyboard */; };
 		911622261BFCCEF100CAF09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911622251BFCCEF100CAF09A /* Assets.xcassets */; };
@@ -22,11 +22,11 @@
 
 /* Begin PBXFileReference section */
 		81025140A9A33D554D27E574 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
-		9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictTableViewCell.swift; sourceTree = "<group>"; };
+		9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuburbTableViewCell.swift; sourceTree = "<group>"; };
 		9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSortingStyle.swift; sourceTree = "<group>"; };
 		911622191BFCCEF100CAF09A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9116221C1BFCCEF100CAF09A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictListViewController.swift; sourceTree = "<group>"; };
+		9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbListViewController.swift; sourceTree = "<group>"; };
 		911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		911622231BFCCEF100CAF09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		911622251BFCCEF100CAF09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				9116221C1BFCCEF100CAF09A /* AppDelegate.swift */,
-				9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */,
+				9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */,
 				911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */,
 				911622221BFCCEF100CAF09A /* Main.storyboard */,
 				911622251BFCCEF100CAF09A /* Assets.xcassets */,
@@ -80,7 +80,7 @@
 				9116222A1BFCCEF100CAF09A /* Info.plist */,
 				911622301BFCCF8200CAF09A /* Weather.swift */,
 				91AC3CAD1BFCE9EF00DFB0C3 /* WeatherService.swift */,
-				9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */,
+				9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */,
 				9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */,
 			);
 			path = WeatherApp;
@@ -229,8 +229,8 @@
 				91AC3CAE1BFCE9EF00DFB0C3 /* WeatherService.swift in Sources */,
 				911622311BFCCF8200CAF09A /* Weather.swift in Sources */,
 				911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */,
-				9101E9CF1BFD154A001640F2 /* DistrictTableViewCell.swift in Sources */,
-				9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */,
+				9101E9CF1BFD154A001640F2 /* SuburbTableViewCell.swift in Sources */,
+				9116221F1BFCCEF100CAF09A /* SuburbListViewController.swift in Sources */,
 				9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */,
 				9101E9D11BFD228C001640F2 /* WeatherSortingStyle.swift in Sources */,
 			);

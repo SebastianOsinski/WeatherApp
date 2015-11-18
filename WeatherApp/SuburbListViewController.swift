@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DistrictListViewController: UITableViewController {
+class SuburbListViewController: UITableViewController {
 
     var detailViewController: WeatherDetailViewController? = nil
     
@@ -97,7 +97,7 @@ class DistrictListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DistrictCell", forIndexPath: indexPath) as! DistrictTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SuburbCell", forIndexPath: indexPath) as! SuburbTableViewCell
         
         let weather = weathers?[indexPath.row]
         cell.nameLabel.text = weather?.name

@@ -15,7 +15,8 @@ class Weather: CustomDebugStringConvertible {
     var wind: String?
     var temperature: Int?
     var feelsLike: Int?
-    var lastUpdated: NSDate?
+    var lastUpdateTimeStamp: Int
+    var lastUpdate: NSDate?
     
     
     init(json: JSON) {
@@ -33,8 +34,11 @@ class Weather: CustomDebugStringConvertible {
         if let _ = json["_weatherFeelsLike"].string {
             feelsLike = json["_weatherFeelsLike"].intValue
         }
-        if json["_weatherLastUpdated"].doubleValue > 0 {
-            lastUpdated = NSDate(timeIntervalSince1970: json["_weatherLastUpdated"].doubleValue)
+        
+        lastUpdateTimeStamp = json["_weatherLastUpdated"].intValue
+        
+        if lastUpdateTimeStamp > 0 {
+            lastUpdate = NSDate(timeIntervalSince1970: Double(lastUpdateTimeStamp))
         }
     }
     
@@ -44,7 +48,7 @@ class Weather: CustomDebugStringConvertible {
                 "Wind: \(wind)\n" +
                 "Temperature: \(temperature)\n" +
                 "Feels like: \(feelsLike)\n" +
-                "Last updated: \(lastUpdated)"
+                "Last updated: \(lastUpdate)"
     }
     
 }

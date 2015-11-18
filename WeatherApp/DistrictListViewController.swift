@@ -47,7 +47,30 @@ class DistrictListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func sortWeather(sortingStyle: WeatherSortingStyle) {
+        switch sortingStyle {
+        case .Alphabetically:
+            weathers?.sortInPlace { $0.name < $1.name }
+        case .ByTemperature:
+            weathers?.sortInPlace { $0.temperature > $1.temperature }
+        case .ByLastUpdate:
+            weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
+        }
+        tableView.reloadData()
+    }
 
+    @IBAction func changeSorting() {
+        let ac = UIAlertController(title: "Choose sorting", message: nil, preferredStyle: .Alert)
+        
+        ac.addAction(UIAlertAction(title: "Alphabetically", style: .Default) {(action) in  self.sortWeather(.Alphabetically) })
+        ac.addAction(UIAlertAction(title: "By temperature", style: .Default) {(action) in  self.sortWeather(.ByTemperature) })
+        ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(action) in  self.sortWeather(.ByLastUpdate) })
+        
+        presentViewController(ac, animated: true) { () -> Void in
+            
+        }
+    }
 
     // MARK: - Segues
 
@@ -70,7 +93,6 @@ class DistrictListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(weathers?.count)
         return weathers?.count ?? 0
     }
 
@@ -83,7 +105,7 @@ class DistrictListViewController: UITableViewController {
         
         let dateString: String
         
-        if let date = weather?.lastUpdated {
+        if let date = weather?.lastUpdate {
             dateString = dateFormatter.stringFromDate(date)
         } else {
             dateString = "--"

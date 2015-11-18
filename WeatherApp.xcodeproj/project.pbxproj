@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67C176E200C5988E2A4D56C7 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E6E5BC8F2C48D78D495E7A /* Pods_WeatherApp.framework */; };
+		9101E9CF1BFD154A001640F2 /* DistrictTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */; };
 		9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221C1BFCCEF100CAF09A /* AppDelegate.swift */; };
 		9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */; };
 		911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		81025140A9A33D554D27E574 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictTableViewCell.swift; sourceTree = "<group>"; };
 		911622191BFCCEF100CAF09A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9116221C1BFCCEF100CAF09A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9116221E1BFCCEF100CAF09A /* DistrictListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictListViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				9116222A1BFCCEF100CAF09A /* Info.plist */,
 				911622301BFCCF8200CAF09A /* Weather.swift */,
 				91AC3CAD1BFCE9EF00DFB0C3 /* WeatherService.swift */,
+				9101E9CE1BFD154A001640F2 /* DistrictTableViewCell.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				91AC3CAE1BFCE9EF00DFB0C3 /* WeatherService.swift in Sources */,
 				911622311BFCCF8200CAF09A /* Weather.swift in Sources */,
 				911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */,
+				9101E9CF1BFD154A001640F2 /* DistrictTableViewCell.swift in Sources */,
 				9116221F1BFCCEF100CAF09A /* DistrictListViewController.swift in Sources */,
 				9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */,
 			);

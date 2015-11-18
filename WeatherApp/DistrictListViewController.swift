@@ -15,9 +15,14 @@ class DistrictListViewController: UITableViewController {
     var weatherService = WeatherService()
     var weathers: [Weather]?
 
+    var dateFormatter = NSDateFormatter()
 
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        
+        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.timeStyle = .MediumStyle
+        
         let service = WeatherService()
         service.getWeather { (weathers) in
             self.weathers = weathers
@@ -70,10 +75,20 @@ class DistrictListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("DistrictCell", forIndexPath: indexPath) as! DistrictTableViewCell
+        
         let weather = weathers?[indexPath.row]
-        cell.textLabel!.text = weather?.name
+        cell.nameLabel.text = weather?.name
+        cell.temperatureLabel.text = "\(weather?.temperature?.description ?? "--")℃"
+        
+        let dateString: String
+        
+        if let date = weather?.lastUpdated {
+            dateString = dateFormatter.stringFromDate(date)
+        } else {
+            dateString = "--"
+        }
+        cell.updatedLabel.text = dateString
         return cell
     }
 

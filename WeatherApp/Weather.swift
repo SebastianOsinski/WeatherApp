@@ -33,8 +33,9 @@ class Weather: CustomDebugStringConvertible {
         if let _ = json["_weatherFeelsLike"].string {
             feelsLike = json["_weatherFeelsLike"].intValue
         }
-        
-        lastUpdated = NSDate(timeIntervalSince1970: json["_weatherLastUpdated"].doubleValue)
+        if json["_weatherLastUpdated"].doubleValue > 0 {
+            lastUpdated = NSDate(timeIntervalSince1970: json["_weatherLastUpdated"].doubleValue)
+        }
     }
     
     var debugDescription: String {

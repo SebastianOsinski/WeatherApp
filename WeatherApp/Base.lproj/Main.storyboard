@@ -34,10 +34,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-Tj-U82">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-Tj-U82">
+                                <rect key="frame" x="20" y="72" width="560" height="33"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Z3-dll">
+                                <rect key="frame" x="28" y="153" width="544" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXq-P4-JuA">
+                                <rect key="frame" x="28" y="193" width="544" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1q-Tm-4NS">
+                                <rect key="frame" x="28" y="113" width="552" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,15 +66,27 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Jri-Z3-dll" firstAttribute="top" secondItem="C1q-Tm-4NS" secondAttribute="bottom" constant="8" id="0OJ-EM-O6r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tH5-Tj-U82" secondAttribute="trailing" id="FrS-K5-gpr"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tH5-Tj-U82" secondAttribute="leading" id="JU7-Jc-euu"/>
+                            <constraint firstItem="C1q-Tm-4NS" firstAttribute="top" secondItem="tH5-Tj-U82" secondAttribute="bottom" constant="8" id="LS8-Gw-VXW"/>
+                            <constraint firstItem="Jri-Z3-dll" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="LhN-zR-97S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jri-Z3-dll" secondAttribute="trailing" constant="8" id="M8N-1S-k1n"/>
                             <constraint firstItem="tH5-Tj-U82" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="Rep-pR-Mnb"/>
+                            <constraint firstItem="xXq-P4-JuA" firstAttribute="top" secondItem="Jri-Z3-dll" secondAttribute="bottom" constant="8" id="Rn6-2W-PTr"/>
+                            <constraint firstItem="C1q-Tm-4NS" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="UgW-y5-pYa"/>
+                            <constraint firstItem="xXq-P4-JuA" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="aw7-VE-Bjf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xXq-P4-JuA" secondAttribute="trailing" constant="8" id="b5b-Gb-Ydd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C1q-Tm-4NS" secondAttribute="trailing" id="bv0-yj-LKc"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="conditionLabel" destination="tH5-Tj-U82" id="3hu-Sq-B1D"/>
+                        <outlet property="feelsLikeLabel" destination="xXq-P4-JuA" id="xdN-63-XDF"/>
+                        <outlet property="temperatureLabel" destination="Jri-Z3-dll" id="fNc-O7-BAE"/>
+                        <outlet property="windLabel" destination="C1q-Tm-4NS" id="ylR-yc-W0Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

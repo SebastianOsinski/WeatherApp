@@ -11,6 +11,11 @@ import UIKit
 class WeatherDetailViewController: UIViewController {
     
     @IBOutlet weak var conditionLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    
+    
 
     var weather: Weather? {
         didSet {
@@ -20,8 +25,14 @@ class WeatherDetailViewController: UIViewController {
     }
 
     func configureView() {
-        title = weather?.name
-        conditionLabel?.text = weather?.condition
+        if let weather = weather {
+            title = weather.name
+            conditionLabel?.text = "Condition: \(weather.condition ?? "--")"
+            windLabel?.text = weather.wind ?? "Wind: --"
+            
+            temperatureLabel?.text = "Temperature: \(weather.temperature?.description ?? "--")"
+            feelsLikeLabel?.text = "Feels like: \(weather.feelsLike?.description ?? "--")"
+        }
     }
 
     override func viewDidLoad() {

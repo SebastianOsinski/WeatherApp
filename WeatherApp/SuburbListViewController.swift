@@ -22,6 +22,8 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         configureSearchController()
         
         dateFormatter.dateStyle = .LongStyle
@@ -50,7 +52,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
     // MARK: - sorting
     
-    func sortWeather() {
+    private func sortWeather() {
         switch currentSortingStyle {
         case .Alphabetically:
             weathers?.sortInPlace { $0.name < $1.name }

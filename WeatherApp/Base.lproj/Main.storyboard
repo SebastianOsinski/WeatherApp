@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -39,57 +40,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-Tj-U82">
-                                <rect key="frame" x="20" y="72" width="560" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TTT℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Z3-dll">
+                                <rect key="frame" x="392" y="124" width="180" height="100"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Z3-dll">
-                                <rect key="frame" x="28" y="153" width="544" height="33"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jri-Z3-dll" secondAttribute="height" multiplier="1:1" constant="80" id="qDs-9r-jWY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXq-P4-JuA">
-                                <rect key="frame" x="28" y="193" width="544" height="33"/>
+                                <rect key="frame" x="392" y="232" width="180" height="14.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Compass" translatesAutoresizingMaskIntoConstraints="NO" id="JjI-yg-iXd">
+                                <rect key="frame" x="196" y="371" width="208" height="208"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JjI-yg-iXd" secondAttribute="height" multiplier="1:1" id="vxr-XW-v1c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-Tj-U82">
+                                <rect key="frame" x="20" y="158" width="240" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1q-Tm-4NS">
-                                <rect key="frame" x="28" y="113" width="552" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1q-Tm-4NS">
+                                <rect key="frame" x="180" y="319" width="240" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="183" width="240" height="32.5"/>
+                                </variation>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSL-Ka-mqf" userLabel="Empty Detail View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose suburb :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yja-88-VWR">
+                                        <rect key="frame" x="199" y="284.5" width="202" height="32.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="yja-88-VWR" firstAttribute="centerY" secondItem="LSL-Ka-mqf" secondAttribute="centerY" id="Exz-B5-i0X"/>
+                                    <constraint firstItem="yja-88-VWR" firstAttribute="centerX" secondItem="LSL-Ka-mqf" secondAttribute="centerX" id="PPB-Ck-8Wx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86363636359999996" green="0.86363636359999996" blue="0.86363636359999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Jri-Z3-dll" firstAttribute="top" secondItem="C1q-Tm-4NS" secondAttribute="bottom" constant="8" id="0OJ-EM-O6r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tH5-Tj-U82" secondAttribute="trailing" id="FrS-K5-gpr"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="tH5-Tj-U82" secondAttribute="leading" id="JU7-Jc-euu"/>
-                            <constraint firstItem="C1q-Tm-4NS" firstAttribute="top" secondItem="tH5-Tj-U82" secondAttribute="bottom" constant="8" id="LS8-Gw-VXW"/>
-                            <constraint firstItem="Jri-Z3-dll" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="LhN-zR-97S"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jri-Z3-dll" secondAttribute="trailing" constant="8" id="M8N-1S-k1n"/>
-                            <constraint firstItem="tH5-Tj-U82" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="Rep-pR-Mnb"/>
-                            <constraint firstItem="xXq-P4-JuA" firstAttribute="top" secondItem="Jri-Z3-dll" secondAttribute="bottom" constant="8" id="Rn6-2W-PTr"/>
-                            <constraint firstItem="C1q-Tm-4NS" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="UgW-y5-pYa"/>
-                            <constraint firstItem="xXq-P4-JuA" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="8" id="aw7-VE-Bjf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xXq-P4-JuA" secondAttribute="trailing" constant="8" id="b5b-Gb-Ydd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C1q-Tm-4NS" secondAttribute="trailing" id="bv0-yj-LKc"/>
+                            <constraint firstItem="Jri-Z3-dll" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.3" id="5Eq-T7-9aV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tH5-Tj-U82" secondAttribute="leading" id="8XM-8a-9Aq"/>
+                            <constraint firstItem="xXq-P4-JuA" firstAttribute="top" secondItem="Jri-Z3-dll" secondAttribute="bottom" constant="8" id="917-tk-lTs"/>
+                            <constraint firstItem="tH5-Tj-U82" firstAttribute="centerY" secondItem="Jri-Z3-dll" secondAttribute="centerY" id="BG4-du-YIe"/>
+                            <constraint firstItem="JjI-yg-iXd" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.36" id="GW8-A1-dii"/>
+                            <constraint firstItem="Jri-Z3-dll" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="60" id="Lh4-Li-XQU"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="JjI-yg-iXd" secondAttribute="bottom" constant="21" id="Llg-e0-66v"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="NT4-QZ-LG4"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="NX9-ni-MDc"/>
+                            <constraint firstItem="JjI-yg-iXd" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="VvI-zS-VyG"/>
+                            <constraint firstItem="tH5-Tj-U82" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.4" id="WAd-Vj-3ws"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="gp2-qH-b6x"/>
+                            <constraint firstItem="JjI-yg-iXd" firstAttribute="width" relation="lessThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.36" id="kFt-RD-eLw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xXq-P4-JuA" secondAttribute="trailing" constant="8" id="l7g-hL-BK4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jri-Z3-dll" secondAttribute="trailing" constant="8" id="mez-c3-qCV"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="oG2-MO-fRS"/>
+                            <constraint firstItem="xXq-P4-JuA" firstAttribute="width" secondItem="Jri-Z3-dll" secondAttribute="width" id="ozn-Cj-Mfc"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" id="y9H-Z7-Dck"/>
+                            <constraint firstItem="LSL-Ka-mqf" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="zZU-WT-npB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NT4-QZ-LG4"/>
+                                <exclude reference="zZU-WT-npB"/>
+                                <exclude reference="GW8-A1-dii"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="GW8-A1-dii"/>
+                                <exclude reference="kFt-RD-eLw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Weather" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="conditionLabel" destination="tH5-Tj-U82" id="3hu-Sq-B1D"/>
                         <outlet property="feelsLikeLabel" destination="xXq-P4-JuA" id="xdN-63-XDF"/>
+                        <outlet property="placeholderView" destination="LSL-Ka-mqf" id="aYj-7L-V8b"/>
                         <outlet property="temperatureLabel" destination="Jri-Z3-dll" id="fNc-O7-BAE"/>
                         <outlet property="windLabel" destination="C1q-Tm-4NS" id="ylR-yc-W0Y"/>
                     </connections>
@@ -234,6 +287,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Compass" width="208" height="208"/>
         <image name="sort" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suburbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-9X-dju">
@@ -186,7 +186,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="4aV-oB-Poq" id="lxL-8z-JwL"/>
+                        <outlet property="searchDisplayController" destination="oEZ-gm-7Zw" id="NjN-Eo-7Qc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -196,6 +196,14 @@
                         <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="oF7-bh-LOc"/>
                         <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="iy4-iu-ZH6"/>
                         <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="GIg-ou-gyv"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="oEZ-gm-7Zw">
+                    <connections>
+                        <outlet property="delegate" destination="7bK-jq-Zjz" id="dpk-bM-uJW"/>
+                        <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="hRN-eo-TaS"/>
+                        <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="7f6-4e-AJl"/>
+                        <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="IX5-gO-iG7"/>
                     </connections>
                 </searchDisplayController>
             </objects>

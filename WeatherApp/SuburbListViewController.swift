@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  SuburbListViewController.swift
 //  WeatherApp
 //
 //  Created by Sebastian Osiński on 18.11.2015.
@@ -8,17 +8,23 @@
 
 import UIKit
 
-class SuburbListViewController: UITableViewController {
+class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
+    
+    var searchController: UISearchController = UISearchController(searchResultsController: nil)
 
     var detailViewController: WeatherDetailViewController? = nil
     
     var weatherService = WeatherService()
     var weathers: [Weather]?
+    var filteredWeathers: [Weather]?
+    
+    var currentSortingStyle: WeatherSortingStyle = .Alphabetically
 
     var dateFormatter = NSDateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchController()
         
         dateFormatter.dateStyle = .LongStyle
         dateFormatter.timeStyle = .MediumStyle
@@ -26,6 +32,7 @@ class SuburbListViewController: UITableViewController {
         let service = WeatherService()
         service.getWeather { (weathers) in
             self.weathers = weathers
+            self.filteredWeathers = weathers
   
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
@@ -42,14 +49,11 @@ class SuburbListViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func sortWeather(sortingStyle: WeatherSortingStyle) {
-        switch sortingStyle {
+    // MARK: - sorting
+    
+    func sortWeather() {
+        switch currentSortingStyle {
         case .Alphabetically:
             weathers?.sortInPlace { $0.name < $1.name }
         case .ByTemperature:
@@ -57,19 +61,23 @@ class SuburbListViewController: UITableViewController {
         case .ByLastUpdate:
             weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
         }
+        
         tableView.reloadData()
+    }
+    
+    func setCurrentSortingStyle(sortingStyle: WeatherSortingStyle) {
+        currentSortingStyle = sortingStyle
+        sortWeather()
     }
 
     @IBAction func changeSorting() {
         let ac = UIAlertController(title: "Choose sorting", message: nil, preferredStyle: .Alert)
         
-        ac.addAction(UIAlertAction(title: "Alphabetically", style: .Default) {(action) in  self.sortWeather(.Alphabetically) })
-        ac.addAction(UIAlertAction(title: "By temperature", style: .Default) {(action) in  self.sortWeather(.ByTemperature) })
-        ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(action) in  self.sortWeather(.ByLastUpdate) })
+        ac.addAction(UIAlertAction(title: "Alphabetically", style: .Default) {(_) in self.setCurrentSortingStyle(.Alphabetically) })
+        ac.addAction(UIAlertAction(title: "By temperature", style: .Default) {(_) in  self.setCurrentSortingStyle(.ByTemperature) })
+        ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(_) in  self.setCurrentSortingStyle(.ByLastUpdate) })
         
-        presentViewController(ac, animated: true) { () -> Void in
-            
-        }
+        presentViewController(ac, animated: true, completion: nil)
     }
 
     // MARK: - Segues
@@ -77,7 +85,7 @@ class SuburbListViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let weather = weathers?[indexPath.row]
+                let weather = searchController.active ? filteredWeathers?[indexPath.row] : weathers?[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! WeatherDetailViewController
                 controller.weather = weather
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -93,13 +101,17 @@ class SuburbListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weathers?.count ?? 0
+        if searchController.active {
+            return filteredWeathers?.count ?? 0
+        } else {
+            return weathers?.count ?? 0
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SuburbCell", forIndexPath: indexPath) as! SuburbTableViewCell
         
-        let weather = weathers?[indexPath.row]
+        let weather = searchController.active ? filteredWeathers?[indexPath.row] : weathers?[indexPath.row]
         cell.nameLabel.text = weather?.name
         cell.temperatureLabel.text = "\(weather?.temperature?.description ?? "--")℃"
         
@@ -113,6 +125,38 @@ class SuburbListViewController: UITableViewController {
         cell.updatedLabel.text = dateString
         return cell
     }
-
+    
+    // MARK: - Search Controller
+    
+    private func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.placeholder = "Search districts..."
+        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor(red: 0.306, green: 0.651, blue: 0.890, alpha: 1.00)
+        
+        
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
+    }
+    
+    func filterWeathersWithText(searchText: String?) {
+        if let searchText = searchText where searchText != "" {
+            filteredWeathers = weathers?.filter { $0.name.componentsSeparatedByString(" ").any { $0.hasPrefix(searchText) } }
+        } else {
+            filteredWeathers = weathers
+        }
+        tableView.reloadData()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchString = searchController.searchBar.text
+        filterWeathersWithText(searchString)
+    }
+    
 }
 

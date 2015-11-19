@@ -52,6 +52,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9101EA171BFDE63E001640F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9116221C1BFCCEF100CAF09A /* AppDelegate.swift */,
+				9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */,
+				9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */,
+				9101EA121BFDD069001640F2 /* Array+any.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		9101EA181BFDE64E001640F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				911622301BFCCF8200CAF09A /* Weather.swift */,
+				91AC3CAD1BFCE9EF00DFB0C3 /* WeatherService.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9101EA191BFDE658001640F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */,
+				911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		911622101BFCCEF100CAF09A = {
 			isa = PBXGroup;
 			children = (
@@ -73,18 +102,13 @@
 		9116221B1BFCCEF100CAF09A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				9116221C1BFCCEF100CAF09A /* AppDelegate.swift */,
-				9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */,
-				911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */,
+				9101EA191BFDE658001640F2 /* Controllers */,
+				9101EA181BFDE64E001640F2 /* Model */,
+				9101EA171BFDE63E001640F2 /* Other */,
 				911622221BFCCEF100CAF09A /* Main.storyboard */,
 				911622251BFCCEF100CAF09A /* Assets.xcassets */,
 				911622271BFCCEF100CAF09A /* LaunchScreen.storyboard */,
 				9116222A1BFCCEF100CAF09A /* Info.plist */,
-				911622301BFCCF8200CAF09A /* Weather.swift */,
-				91AC3CAD1BFCE9EF00DFB0C3 /* WeatherService.swift */,
-				9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */,
-				9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */,
-				9101EA121BFDD069001640F2 /* Array+any.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";

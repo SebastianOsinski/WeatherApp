@@ -11,13 +11,11 @@ import UIKit
 class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
     var searchController: UISearchController = UISearchController(searchResultsController: nil)
-
     var detailViewController: WeatherDetailViewController? = nil
     
     var weatherService = WeatherService()
     var weathers: [Weather]?
     var filteredWeathers: [Weather]?
-    
     var currentSortingStyle: WeatherSortingStyle = .Alphabetically
 
     var dateFormatter = NSDateFormatter()
@@ -41,7 +39,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
 
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? WeatherDetailViewController
+            self.detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? WeatherDetailViewController
         }
     }
 
@@ -62,6 +60,10 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
             weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
         }
         
+        if searchController.active {
+            filterWeathersWithText(searchController.searchBar.text)
+        }
+        
         tableView.reloadData()
     }
     
@@ -75,7 +77,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         
         ac.addAction(UIAlertAction(title: "Alphabetically", style: .Default) {(_) in self.setCurrentSortingStyle(.Alphabetically) })
         ac.addAction(UIAlertAction(title: "By temperature", style: .Default) {(_) in  self.setCurrentSortingStyle(.ByTemperature) })
-        ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(_) in  self.setCurrentSortingStyle(.ByLastUpdate) })
+        ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(_) in self.setCurrentSortingStyle(.ByLastUpdate) })
         
         presentViewController(ac, animated: true, completion: nil)
     }
@@ -137,7 +139,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         searchController.searchBar.placeholder = "Search districts..."
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor(red: 0.306, green: 0.651, blue: 0.890, alpha: 1.00)
-        
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar

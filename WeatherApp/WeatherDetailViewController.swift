@@ -15,8 +15,6 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     
-    
-
     var weather: Weather? {
         didSet {
             debugPrint(weather)
@@ -39,12 +37,6 @@ class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
         configureView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

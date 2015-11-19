@@ -127,21 +127,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suburbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-9X-dju">
-                                            <rect key="frame" x="8" y="0.0" width="300" height="36"/>
+                                            <rect key="frame" x="8" y="0.0" width="450" height="36"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kne-pG-OZ2">
-                                            <rect key="frame" x="316" y="30" width="276" height="13"/>
+                                            <rect key="frame" x="142" y="29.5" width="450" height="13.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czp-rs-pnB">
-                                            <rect key="frame" x="316" y="7" width="11" height="21"/>
+                                            <rect key="frame" x="581.5" y="7" width="10.5" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,10 +153,10 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="czp-rs-pnB" secondAttribute="bottom" constant="8" id="5QJ-Oo-c2R"/>
                                         <constraint firstItem="czp-rs-pnB" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="-1" id="Ozi-bW-lFi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="xo4-9X-dju" secondAttribute="bottom" id="RfL-Ed-gcK"/>
-                                        <constraint firstItem="Kne-pG-OZ2" firstAttribute="width" secondItem="37f-cq-3Eg" secondAttribute="width" multiplier="0.3" constant="96" id="SND-5c-U87"/>
+                                        <constraint firstItem="Kne-pG-OZ2" firstAttribute="width" secondItem="37f-cq-3Eg" secondAttribute="width" multiplier="0.75" id="SND-5c-U87"/>
                                         <constraint firstItem="xo4-9X-dju" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="SuF-6F-cUg"/>
-                                        <constraint firstItem="czp-rs-pnB" firstAttribute="leading" secondItem="xo4-9X-dju" secondAttribute="trailing" constant="8" id="c4w-vL-h3Z"/>
-                                        <constraint firstItem="xo4-9X-dju" firstAttribute="width" secondItem="37f-cq-3Eg" secondAttribute="width" multiplier="0.5" id="fgY-3X-l1S"/>
+                                        <constraint firstItem="xo4-9X-dju" firstAttribute="width" secondItem="37f-cq-3Eg" secondAttribute="width" multiplier="0.75" id="fgY-3X-l1S"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="czp-rs-pnB" secondAttribute="trailing" id="mDB-QW-IjK"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Kne-pG-OZ2" secondAttribute="bottom" constant="-7.5" id="pTO-Ge-h71"/>
                                         <constraint firstItem="xo4-9X-dju" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="-8" id="q9r-Bo-y9E"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Kne-pG-OZ2" secondAttribute="trailing" id="t7H-cO-F1m"/>

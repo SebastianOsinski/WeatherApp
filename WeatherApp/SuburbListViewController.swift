@@ -22,8 +22,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
         configureSearchController()
         
         dateFormatter.dateStyle = .LongStyle

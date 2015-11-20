@@ -13,6 +13,8 @@ class Weather: CustomDebugStringConvertible {
     var name: String
     var condition: String?
     var wind: String?
+    var windDirection: String?
+    var windSpeed: Double?
     var temperature: Int?
     var feelsLike: Int?
     var lastUpdateTimeStamp: Int
@@ -27,6 +29,11 @@ class Weather: CustomDebugStringConvertible {
         }
         if let _ = json["_weatherWind"].string {
             wind = json["_weatherWind"].stringValue
+            
+            let temp = wind!.stringByReplacingOccurrencesOfString("Wind: ", withString: "")
+            let windComponents = temp.componentsSeparatedByString(" at ")
+            windDirection = windComponents[0]
+            windSpeed = Double(windComponents[1].stringByReplacingOccurrencesOfString("kph", withString: ""))
         }
         if let _ = json["_weatherTemp"].string {
             temperature = json["_weatherTemp"].intValue

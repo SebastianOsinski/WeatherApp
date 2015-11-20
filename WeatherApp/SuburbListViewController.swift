@@ -147,7 +147,11 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
     func filterWeathersWithText(searchText: String?) {
         if let searchText = searchText where searchText != "" {
-            filteredWeathers = weathers?.filter { $0.name.componentsSeparatedByString(" ").any { $0.hasPrefix(searchText) } }
+            filteredWeathers = weathers?.filter { (weather) in
+                let nameParts = weather.name.componentsSeparatedByString(" ").map { $0.lowercaseString }
+
+                return nameParts.any { $0.hasPrefix(searchText.lowercaseString) }
+            }
         } else {
             filteredWeathers = weathers
         }

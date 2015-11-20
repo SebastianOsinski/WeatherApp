@@ -10,6 +10,7 @@ import UIKit
 
 class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
+    @IBOutlet weak var changeSortingStyleButton: UIBarButtonItem!
     var searchController: UISearchController = UISearchController(searchResultsController: nil)
     var detailViewController: WeatherDetailViewController? = nil
     
@@ -73,13 +74,16 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     @IBAction func changeSorting() {
-        let ac = UIAlertController(title: "Choose sorting", message: nil, preferredStyle: .Alert)
+        let ac = UIAlertController(title: "Choose sorting", message: nil, preferredStyle: .ActionSheet)
         
         ac.addAction(UIAlertAction(title: "Alphabetically", style: .Default) {(_) in self.setCurrentSortingStyle(.Alphabetically) })
         ac.addAction(UIAlertAction(title: "By temperature", style: .Default) {(_) in  self.setCurrentSortingStyle(.ByTemperature) })
         ac.addAction(UIAlertAction(title: "By last update date", style: .Default) {(_) in self.setCurrentSortingStyle(.ByLastUpdate) })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         
-        presentViewController(ac, animated: true, completion: nil)
+        ac.popoverPresentationController?.sourceView = self.view
+        ac.popoverPresentationController?.barButtonItem = self.changeSortingStyleButton
+        self.presentViewController(ac, animated: true, completion: nil)
     }
 
     // MARK: - Segues

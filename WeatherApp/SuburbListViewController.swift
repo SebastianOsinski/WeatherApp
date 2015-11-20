@@ -12,7 +12,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
     @IBOutlet weak var changeSortingStyleButton: UIBarButtonItem!
     var searchController: UISearchController = UISearchController(searchResultsController: nil)
-    var detailViewController: WeatherDetailViewController? = nil
     
     var weatherService = WeatherService()
     var weathers: [Weather]?
@@ -23,7 +22,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSearchController()
+        self.configureSearchController()
         
         dateFormatter.dateStyle = .LongStyle
         dateFormatter.timeStyle = .MediumStyle
@@ -37,11 +36,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
                 self.tableView.reloadData()
             }
         }
-
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? WeatherDetailViewController
-        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -53,19 +47,19 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     
     private func sortWeather() {
         switch currentSortingStyle {
-        case .Alphabetically:
-            weathers?.sortInPlace { $0.name < $1.name }
-        case .ByTemperature:
-            weathers?.sortInPlace { $0.temperature > $1.temperature }
-        case .ByLastUpdate:
-            weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
+            case .Alphabetically:
+                weathers?.sortInPlace { $0.name < $1.name }
+            case .ByTemperature:
+                weathers?.sortInPlace { $0.temperature > $1.temperature }
+            case .ByLastUpdate:
+                weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
         }
         
         if searchController.active {
             filterWeathersWithText(searchController.searchBar.text)
         }
         
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func setCurrentSortingStyle(sortingStyle: WeatherSortingStyle) {

@@ -18,11 +18,16 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     var filteredWeathers: [Weather]?
     var currentSortingStyle: WeatherSortingStyle = .Alphabetically
 
-    var dateFormatter = NSDateFormatter()
+    let dateFormatter = NSDateFormatter()
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var fEnabled = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureSearchController()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userChangedDisplaySettings", name: NSUserDefaultsDidChangeNotification, object: nil)
+        fEnabled = defaults.boolForKey("FahrenheitEnabled")
         
         dateFormatter.dateStyle = .LongStyle
         dateFormatter.timeStyle = .MediumStyle
@@ -50,7 +55,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
             case .Alphabetically:
                 weathers?.sortInPlace { $0.name < $1.name }
             case .ByTemperature:
-                weathers?.sortInPlace { $0.temperature > $1.temperature }
+                weathers?.sortInPlace { $0.temperatureInC > $1.temperatureInC }
             case .ByLastUpdate:
                 weathers?.sortInPlace { $0.lastUpdateTimeStamp > $1.lastUpdateTimeStamp }
         }
@@ -112,8 +117,10 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         let cell = tableView.dequeueReusableCellWithIdentifier("SuburbCell", forIndexPath: indexPath) as! SuburbTableViewCell
         
         let weather = searchController.active ? filteredWeathers?[indexPath.row] : weathers?[indexPath.row]
+        
+        
         cell.nameLabel.text = weather?.name
-        cell.temperatureLabel.text = "\(weather?.temperature?.description ?? "--")℃"
+        cell.temperatureLabel.text =  fEnabled ? "\(weather?.temperatureInF?.description ?? "--")℉" : "\(weather?.temperatureInC?.description ?? "--")℃"
         
         let dateString: String
         
@@ -159,6 +166,12 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchString = searchController.searchBar.text
         filterWeathersWithText(searchString)
+    }
+    
+    // MARK: - defaults changed
+    func userChangedDisplaySettings() {
+        fEnabled = defaults.boolForKey("FahrenheitEnabled")
+        tableView.reloadData()
     }
     
 }

@@ -126,6 +126,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Weather" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="compassView" destination="Yx7-0n-e5G" id="0e2-3N-dt7"/>
                         <outlet property="conditionLabel" destination="tH5-Tj-U82" id="3hu-Sq-B1D"/>
                         <outlet property="feelsLikeLabel" destination="xXq-P4-JuA" id="xdN-63-XDF"/>
                         <outlet property="temperatureLabel" destination="Jri-Z3-dll" id="fNc-O7-BAE"/>

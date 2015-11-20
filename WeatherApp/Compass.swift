@@ -24,6 +24,7 @@ class Compass: UIView {
     }
     
     private func configureCompass() {
+        print("configure Compass")
         self.backgroundColor = UIColor.clearColor()
         let compassPlate = UIImage(named: "CompassPlate")!
         let needle = UIImage(named: "CompassNeedle")!
@@ -57,4 +58,11 @@ class Compass: UIView {
         needleImageView.transform = CGAffineTransformMakeRotation((angle * CGFloat(M_PI)) / 180.0)
     }
     
+    func setDirection(direction: CardinalPoint) {
+        
+        
+        UIView.animateWithDuration(3, delay: 0.5, options: [], animations: { () -> Void in
+            self.setNeedleAngle(CGFloat(direction.rawValue) * CGFloat(22.5))
+            }, completion: nil)
+    }
 }

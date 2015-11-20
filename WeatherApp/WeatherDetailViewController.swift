@@ -11,12 +11,13 @@ import UIKit
 class WeatherDetailViewController: UIViewController {
     
     @IBOutlet weak var conditionLabel: UILabel!
-    @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var windDirectionLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var placeholderView: UIView!
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     var weather: Weather? {
         didSet {
@@ -30,19 +31,26 @@ class WeatherDetailViewController: UIViewController {
             placeholderView?.hidden = true
             title = weather.name
             conditionLabel?.text = "\(weather.condition ?? "--")"
-            //windLabel?.text = weather.wind ?? "Wind: --"
             windDirectionLabel?.text = weather.windDirection ?? "--"
             windSpeedLabel?.text = "\(weather.windSpeed?.description ?? "--")"
             
-            temperatureLabel?.text = "\(weather.temperature?.description ?? "--")℃"
-            feelsLikeLabel?.text = "Feels like \(weather.feelsLike?.description ?? "--")℃"
+            let fEnabled = defaults.boolForKey("FahrenheitEnabled")
+            
+            if fEnabled {
+                temperatureLabel?.text = "\(weather.temperatureInF?.description ?? "--")℉"
+                feelsLikeLabel?.text = "Feels like \(weather.feelsLikeInF?.description ?? "--")℉"
+            } else {
+                temperatureLabel?.text = "\(weather.temperatureInC?.description ?? "--")℃"
+                feelsLikeLabel?.text = "Feels like \(weather.feelsLikeInC?.description ?? "--")℃"
+            }
         } else {
             placeholderView?.hidden = false
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "configureView", name: NSUserDefaultsDidChangeNotification, object: nil)
         configureView()
     }
 

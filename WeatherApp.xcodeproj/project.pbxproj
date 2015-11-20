@@ -11,6 +11,7 @@
 		9101E9CF1BFD154A001640F2 /* SuburbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */; };
 		9101E9D11BFD228C001640F2 /* WeatherSortingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */; };
 		9101EA131BFDD069001640F2 /* Array+any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9101EA121BFDD069001640F2 /* Array+any.swift */; };
+		9101EA491BFF6490001640F2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9101EA481BFF6490001640F2 /* Settings.bundle */; };
 		9116221D1BFCCEF100CAF09A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221C1BFCCEF100CAF09A /* AppDelegate.swift */; };
 		9116221F1BFCCEF100CAF09A /* SuburbListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */; };
 		911622211BFCCEF100CAF09A /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911622201BFCCEF100CAF09A /* WeatherDetailViewController.swift */; };
@@ -26,6 +27,7 @@
 		9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuburbTableViewCell.swift; sourceTree = "<group>"; };
 		9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSortingStyle.swift; sourceTree = "<group>"; };
 		9101EA121BFDD069001640F2 /* Array+any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+any.swift"; sourceTree = "<group>"; };
+		9101EA481BFF6490001640F2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		911622191BFCCEF100CAF09A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9116221C1BFCCEF100CAF09A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9116221E1BFCCEF100CAF09A /* SuburbListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbListViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				911622251BFCCEF100CAF09A /* Assets.xcassets */,
 				911622271BFCCEF100CAF09A /* LaunchScreen.storyboard */,
 				9116222A1BFCCEF100CAF09A /* Info.plist */,
+				9101EA481BFF6490001640F2 /* Settings.bundle */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9101EA491BFF6490001640F2 /* Settings.bundle in Resources */,
 				911622291BFCCEF100CAF09A /* LaunchScreen.storyboard in Resources */,
 				911622261BFCCEF100CAF09A /* Assets.xcassets in Resources */,
 				911622241BFCCEF100CAF09A /* Main.storyboard in Resources */,

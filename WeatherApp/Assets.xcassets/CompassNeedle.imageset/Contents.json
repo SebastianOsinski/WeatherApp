@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Compass.png",
+      "filename" : "CompassNeedle.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Compass@2x.png",
+      "filename" : "CompassNeedle@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Compass@3x.png",
+      "filename" : "CompassNeedle@3x.png",
       "scale" : "3x"
     }
   ],

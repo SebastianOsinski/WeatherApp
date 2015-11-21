@@ -16,12 +16,12 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var compassView: Compass!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
     var weather: Weather? {
         didSet {
-            debugPrint(weather)
             configureView()
         }
     }
@@ -33,6 +33,10 @@ class WeatherDetailViewController: UIViewController {
             conditionLabel?.text = "\(weather.condition ?? "--")"
             windDirectionLabel?.text = weather.windDirection ?? "--"
             windSpeedLabel?.text = "\(weather.windSpeed?.description ?? "--")"
+            
+            if let windDirection = weather.windDirection {
+                compassView?.setDirection(CardinalPoint(withString: windDirection) ?? .N)
+            }
             
             let fEnabled = defaults.boolForKey("FahrenheitEnabled")
             

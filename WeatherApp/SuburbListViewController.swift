@@ -118,7 +118,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         
         let weather = searchController.active ? filteredWeathers?[indexPath.row] : weathers?[indexPath.row]
         
-        
         cell.nameLabel.text = weather?.name
         cell.temperatureLabel.text =  fEnabled ? "\(weather?.temperatureInF?.description ?? "--")℉" : "\(weather?.temperatureInC?.description ?? "--")℃"
         

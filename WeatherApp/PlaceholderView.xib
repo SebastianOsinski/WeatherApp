@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="OIZ-aU-yr7">
+                    <rect key="frame" x="120" y="120" width="360" height="360"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="OIZ-aU-yr7" secondAttribute="height" multiplier="1:1" id="f0W-FG-cG6"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose suburb :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-BP-Mab">
+                    <rect key="frame" x="120" y="496" width="360" height="33"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.2795184850692749" green="0.68742424249649048" blue="0.91971129179000854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YUv-BP-Mab" firstAttribute="trailing" secondItem="OIZ-aU-yr7" secondAttribute="trailing" id="3fk-uo-p5o"/>
+                <constraint firstItem="OIZ-aU-yr7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Rwk-KC-9jw"/>
+                <constraint firstItem="YUv-BP-Mab" firstAttribute="top" secondItem="OIZ-aU-yr7" secondAttribute="bottom" constant="16" id="e7H-cx-hCA"/>
+                <constraint firstItem="OIZ-aU-yr7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="geg-ec-vYN"/>
+                <constraint firstItem="OIZ-aU-yr7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="rDF-9h-6V3"/>
+                <constraint firstItem="YUv-BP-Mab" firstAttribute="leading" secondItem="OIZ-aU-yr7" secondAttribute="leading" id="wTG-tp-aUl"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Logo" width="705" height="628"/>
+    </resources>
+</document>

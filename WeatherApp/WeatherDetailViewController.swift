@@ -15,8 +15,9 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
-    @IBOutlet weak var placeholderView: UIView!
     @IBOutlet weak var compassView: Compass!
+    
+    var placeholderView: UIView!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -52,9 +53,20 @@ class WeatherDetailViewController: UIViewController {
         }
     }
     
+    // Placeholder view will be used in iPad and iPhone 6(s) Plus in landscape, when detail controller is displayed at the beginning, without any suburb selected
+    func configurePlaceholderView() {
+        placeholderView = UINib(nibName: "PlaceholderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as? UIView
+        self.view.addSubview(placeholderView)
+        placeholderView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[subview]-0-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: ["subview": placeholderView]))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[subview]-0-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: ["subview": placeholderView]))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "configureView", name: NSUserDefaultsDidChangeNotification, object: nil)
+        
+        configurePlaceholderView()
         configureView()
     }
 

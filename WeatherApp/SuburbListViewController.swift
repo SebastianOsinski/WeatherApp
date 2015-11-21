@@ -24,6 +24,11 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.tintColor = UIColor(red: 0.306, green: 0.651, blue: 0.890, alpha: 1.00)
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        
         self.configureSearchController()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userChangedDisplaySettings", name: NSUserDefaultsDidChangeNotification, object: nil)
@@ -32,22 +37,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         dateFormatter.dateStyle = .LongStyle
         dateFormatter.timeStyle = .MediumStyle
         
-        let service = WeatherService()
-        service.getWeather { (weathers, error) in
-            if let error = error {
-                let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(ac, animated: true, completion: nil)
-                return
-            }
-            
-            self.weathers = weathers
-            self.filteredWeathers = weathers
-  
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-            }
-        }
+        refresh()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -55,7 +45,28 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         super.viewWillAppear(animated)
     }
     
-    // MARK: - sorting
+    // MARK: - Data loading
+    func refresh(refreshControl: UIRefreshControl? = nil) {
+        weatherService.getWeather { (weathers, error) in
+            if let error = error {
+                let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(ac, animated: true, completion: nil)
+                self.refreshControl?.endRefreshing()
+                return
+            }
+            
+            self.weathers = weathers
+            self.filteredWeathers = weathers
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+                refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    // MARK: - Sorting
     
     private func sortWeather() {
         switch currentSortingStyle {

@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="SB2-Vw-Ao8">
-                                <rect key="frame" x="90" y="90" width="420" height="420"/>
+                                <rect key="frame" x="90.5" y="89.5" width="420" height="420"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SB2-Vw-Ao8" secondAttribute="height" multiplier="1:1" id="Xup-6D-Mvh"/>
@@ -31,9 +31,21 @@
                         <color key="backgroundColor" red="0.2795184850692749" green="0.68742424249649048" blue="0.91971129179000854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SB2-Vw-Ao8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Mb-h4-TpQ"/>
-                            <constraint firstItem="SB2-Vw-Ao8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="dHi-iD-fwa"/>
+                            <constraint firstItem="SB2-Vw-Ao8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="V37-k4-RBd"/>
+                            <constraint firstItem="SB2-Vw-Ao8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.48" id="dHi-iD-fwa"/>
                             <constraint firstItem="SB2-Vw-Ao8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mLX-ru-HZ5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dHi-iD-fwa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="V37-k4-RBd"/>
+                                <include reference="dHi-iD-fwa"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

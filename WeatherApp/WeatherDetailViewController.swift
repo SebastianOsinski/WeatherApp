@@ -22,7 +22,6 @@ class WeatherDetailViewController: UIViewController {
     
     var weather: Weather? {
         didSet {
-            debugPrint(weather)
             configureView()
         }
     }

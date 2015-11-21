@@ -13,11 +13,9 @@ class WeatherService {
     
     static let sourceURL = "http://dnu5embx6omws.cloudfront.net/venues/weather.json"
     
-    func getWeather(completionHandler: ([Weather]?) -> Void) {
+    func getWeather(completionHandler: ([Weather]?, NSError?) -> Void) {
         Alamofire.request(.GET, WeatherService.sourceURL)
             .responseJSON { response in
-                
-                var weathers: [Weather]?
                 
                 switch response.result {
                 case .Success:
@@ -25,14 +23,15 @@ class WeatherService {
                         let json = JSON(value)
                         let jsonWeathers = json["data"].arrayValue
                         
-                        weathers = jsonWeathers.filter{ $0["_country"]["_name"].stringValue == "Australia" }
+                        let weathers = jsonWeathers.filter{ $0["_country"]["_name"].stringValue == "Australia" }
                                                 .map { Weather(json: $0) }
+                        
+                        completionHandler(weathers, nil)
                     }
                 case .Failure(let error):
-                    print(error)
+                    completionHandler(nil, error)
                 }
             
-                completionHandler(weathers)
         }
     }
 }

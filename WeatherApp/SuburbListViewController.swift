@@ -33,7 +33,14 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         dateFormatter.timeStyle = .MediumStyle
         
         let service = WeatherService()
-        service.getWeather { (weathers) in
+        service.getWeather { (weathers, error) in
+            if let error = error {
+                let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(ac, animated: true, completion: nil)
+                return
+            }
+            
             self.weathers = weathers
             self.filteredWeathers = weathers
   

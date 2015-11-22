@@ -1,13 +1,17 @@
 //
-//  CardinalPoint.swift
+//  CardinalDirection.swift
 //  WeatherApp
 //
 //  Created by Sebastian Osiński on 20.11.2015.
 //  Copyright © 2015 Sebastian Osiński. All rights reserved.
 //
 
-enum CardinalPoint: Int {
+import UIKit
+
+enum CardinalDirection: Int {
     
+    // Order of cases matters, it's clockwise and allows each case to have correct rawValue
+    // which will be used to calculate angleFromNorth
     case N = 0, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW
     
     init?(withString string: String) {
@@ -32,5 +36,9 @@ enum CardinalPoint: Int {
         }
     }
     
+    // Angle from North Direction in radians
+    var angleFromNorth: CGFloat {
+        return CGFloat(self.rawValue) * CGFloat(M_PI / 8)
+    }
     
 }

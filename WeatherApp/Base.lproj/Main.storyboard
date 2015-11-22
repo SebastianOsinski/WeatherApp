@@ -85,7 +85,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-0n-e5G" customClass="Compass" customModule="WeatherApp" customModuleProvider="target">
+                            <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-0n-e5G" customClass="Compass" customModule="WeatherApp" customModuleProvider="target">
                                 <rect key="frame" x="210" y="419" width="180" height="180"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -54,12 +54,12 @@ class Compass: UIView {
     }
     
     private func setNeedleAngle(angle: CGFloat) {
-        needleImageView.transform = CGAffineTransformMakeRotation((angle * CGFloat(M_PI)) / 180.0)
+        needleImageView.transform = CGAffineTransformMakeRotation(angle)
     }
     
-    func setDirection(direction: CardinalPoint) {
-        UIView.animateWithDuration(3, delay: 0.5, options: [], animations: { () -> Void in
-            self.setNeedleAngle(CGFloat(direction.rawValue) * CGFloat(22.5))
+    func setDirection(direction: CardinalDirection) {
+        UIView.animateWithDuration(3, delay: 0.5, options: [], animations: {
+            self.setNeedleAngle(direction.angleFromNorth)
             }, completion: nil)
     }
 }

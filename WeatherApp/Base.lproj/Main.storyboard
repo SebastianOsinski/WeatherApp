@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXq-P4-JuA">
-                                <rect key="frame" x="392" y="160" width="180" height="14.5"/>
+                                <rect key="frame" x="400" y="160" width="180" height="14.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TTT℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Z3-dll">
-                                <rect key="frame" x="392" y="96" width="180" height="54"/>
+                                <rect key="frame" x="400" y="96" width="180" height="54"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Jri-Z3-dll" secondAttribute="width" multiplier="0.3" id="qDs-9r-jWY"/>
@@ -85,8 +85,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-0n-e5G" customClass="Compass" customModule="WeatherApp" customModuleProvider="target">
-                                <rect key="frame" x="210" y="419" width="180" height="180"/>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-0n-e5G" customClass="Compass" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="210" y="412" width="180" height="180"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

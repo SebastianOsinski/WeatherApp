@@ -35,7 +35,7 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         fEnabled = defaults.boolForKey("FahrenheitEnabled")
         
         dateFormatter.dateStyle = .LongStyle
-        dateFormatter.timeStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
         
         refresh()
     }

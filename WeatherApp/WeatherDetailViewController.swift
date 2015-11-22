@@ -33,7 +33,7 @@ class WeatherDetailViewController: UIViewController {
             title = weather.name
             conditionLabel?.text = "\(weather.condition ?? "--")"
             windDirectionLabel?.text = weather.windDirection ?? "--"
-            windSpeedLabel?.text = "\(weather.windSpeed?.description ?? "--")"
+            windSpeedLabel?.text = "\(weather.windSpeed?.description ?? "--")kph"
             
             if let windDirection = weather.windDirection {
                 compassView?.setDirection(CardinalPoint(withString: windDirection) ?? .N)

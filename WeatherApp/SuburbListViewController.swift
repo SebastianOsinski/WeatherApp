@@ -164,7 +164,6 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
     }
     
     func filterWeathersWithText(searchText: String?) {

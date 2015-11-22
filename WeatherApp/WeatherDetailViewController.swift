@@ -36,7 +36,7 @@ class WeatherDetailViewController: UIViewController {
             windSpeedLabel?.text = "\(weather.windSpeed?.description ?? "--")kph"
             
             if let windDirection = weather.windDirection {
-                compassView?.setDirection(CardinalPoint(withString: windDirection) ?? .N)
+                compassView?.setDirection(CardinalDirection(withString: windDirection) ?? .N)
             }
             
             let fEnabled = defaults.boolForKey("FahrenheitEnabled")

@@ -118,16 +118,18 @@
                             <constraint firstItem="PUL-pX-B8r" firstAttribute="width" secondItem="C1q-Tm-4NS" secondAttribute="width" id="ZPc-3q-19R"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yx7-0n-e5G" secondAttribute="bottom" id="afc-Ul-1ph"/>
                             <constraint firstItem="C1q-Tm-4NS" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="ibq-x0-Udk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xXq-P4-JuA" secondAttribute="trailing" constant="8" id="l7g-hL-BK4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jri-Z3-dll" secondAttribute="trailing" constant="8" id="mez-c3-qCV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xXq-P4-JuA" secondAttribute="trailing" id="l7g-hL-BK4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jri-Z3-dll" secondAttribute="trailing" id="mez-c3-qCV"/>
                             <constraint firstItem="PUL-pX-B8r" firstAttribute="centerX" secondItem="C1q-Tm-4NS" secondAttribute="centerX" id="od6-8T-1uc"/>
                             <constraint firstItem="xXq-P4-JuA" firstAttribute="width" secondItem="Jri-Z3-dll" secondAttribute="width" id="ozn-Cj-Mfc"/>
                             <constraint firstItem="C1q-Tm-4NS" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="pL0-Nh-tOA"/>
                             <constraint firstItem="Yx7-0n-e5G" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="pQP-n4-eVf"/>
+                            <constraint firstItem="tH5-Tj-U82" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.55" id="tIv-Rs-PmQ"/>
                             <constraint firstItem="Yx7-0n-e5G" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="u6o-YY-K3d"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="tIv-Rs-PmQ"/>
                                 <exclude reference="543-CT-0Jf"/>
                                 <exclude reference="A5Q-LI-6UX"/>
                                 <exclude reference="Ogq-Io-0l5"/>
@@ -147,6 +149,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="WAd-Vj-3ws"/>
+                                <include reference="tIv-Rs-PmQ"/>
                                 <include reference="A5Q-LI-6UX"/>
                                 <exclude reference="ibq-x0-Udk"/>
                                 <exclude reference="DG2-s3-Jdg"/>

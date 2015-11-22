@@ -63,6 +63,8 @@
 		9101EA171BFDE63E001640F2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				9101EA501BFFF8D7001640F2 /* PlaceholderView.xib */,
+				9101EA4A1BFFCBF2001640F2 /* Compass.swift */,
 				9116221C1BFCCEF100CAF09A /* AppDelegate.swift */,
 				9101E9CE1BFD154A001640F2 /* SuburbTableViewCell.swift */,
 				9101E9D01BFD228C001640F2 /* WeatherSortingStyle.swift */,
@@ -76,6 +78,7 @@
 			children = (
 				911622301BFCCF8200CAF09A /* Weather.swift */,
 				91AC3CAD1BFCE9EF00DFB0C3 /* WeatherService.swift */,
+				9101EA4E1BFFD821001640F2 /* CardinalDirection.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -114,13 +117,10 @@
 				9101EA181BFDE64E001640F2 /* Model */,
 				9101EA171BFDE63E001640F2 /* Other */,
 				911622221BFCCEF100CAF09A /* Main.storyboard */,
-				9101EA4A1BFFCBF2001640F2 /* Compass.swift */,
 				911622251BFCCEF100CAF09A /* Assets.xcassets */,
 				911622271BFCCEF100CAF09A /* LaunchScreen.storyboard */,
 				9116222A1BFCCEF100CAF09A /* Info.plist */,
 				9101EA481BFF6490001640F2 /* Settings.bundle */,
-				9101EA4E1BFFD821001640F2 /* CardinalDirection.swift */,
-				9101EA501BFFF8D7001640F2 /* PlaceholderView.xib */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";

@@ -49,10 +49,12 @@ class SuburbListViewController: UITableViewController, UISearchResultsUpdating {
     func refresh(refreshControl: UIRefreshControl? = nil) {
         weatherService.getWeather { (weathers, error) in
             if let error = error {
-                let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(ac, animated: true, completion: nil)
-                self.refreshControl?.endRefreshing()
+                dispatch_async(dispatch_get_main_queue()) {
+                    let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(ac, animated: true, completion: nil)
+                    self.refreshControl?.endRefreshing()
+                }
                 return
             }
             

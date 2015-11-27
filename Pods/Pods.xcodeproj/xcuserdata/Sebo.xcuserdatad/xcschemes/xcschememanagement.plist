@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-WeatherApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<key>32C601CFAFD0AA9C0E77183D7F37354A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65209C833771F6AC8952FB5EE5038CE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DCA726FA6EE04BFEFD3BAFCB7DE36B28</key>
+		<key>DE34E875F1C472AF512E577865F483D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
